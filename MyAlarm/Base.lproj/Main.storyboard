@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="qLJ-7k-qYu">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--나만의 알람-->
+        <scene sceneID="5EI-d4-RaA">
+            <objects>
+                <tableViewController id="WjO-cy-gv6" customClass="HomeViewController" customModule="MyAlarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Z6z-lN-hBK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Ue1-wl-I3i">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Ue1-wl-I3i" id="C3K-ry-kGe">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WjO-cy-gv6" id="2UY-Bv-IqB"/>
+                            <outlet property="delegate" destination="WjO-cy-gv6" id="wW9-Za-qC9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="나만의 알람" id="kpz-HZ-5x6">
+                        <barButtonItem key="rightBarButtonItem" image="plus" catalog="system" id="G82-9s-GqP">
+                            <color key="tintColor" systemColor="labelColor"/>
+                            <connections>
+                                <segue destination="1Ax-uu-K0y" kind="show" id="ZX7-c7-ggZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iEI-dv-0Uh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="489" y="71"/>
+        </scene>
+        <!--알람 추가-->
+        <scene sceneID="Eck-ll-Tsb">
+            <objects>
+                <viewController id="1Ax-uu-K0y" customClass="NewAlarmViewController" customModule="MyAlarm" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uno-7n-lFP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="pIW-dI-MkB">
+                                <rect key="frame" x="36" y="118" width="342" height="231.5"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="iU1-kh-LDx">
+                                        <rect key="frame" x="0.0" y="0.0" width="342" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람 종류" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bI3-k7-tPl">
+                                                <rect key="frame" x="0.0" y="15" width="92" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nzb-eg-0x0">
+                                                <rect key="frame" x="142" y="0.0" width="200" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="VIM-8f-6YD"/>
+                                                    <constraint firstAttribute="width" constant="200" id="vDx-Gh-W5f"/>
+                                                </constraints>
+                                            </pickerView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="et1-B9-NOA">
+                                        <rect key="frame" x="0.0" y="80" width="342" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBG-yq-9dj">
+                                                <rect key="frame" x="0.0" y="15" width="92" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="M1b-KA-XkG">
+                                                <rect key="frame" x="142" y="0.0" width="200" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="dcS-D5-4oY"/>
+                                                    <constraint firstAttribute="width" constant="200" id="jB9-VG-l7E"/>
+                                                </constraints>
+                                                <locale key="locale" localeIdentifier="ko_KR"/>
+                                            </datePicker>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="V5O-Bd-iys">
+                                        <rect key="frame" x="0.0" y="160" width="342" height="71.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8CX-2s-Tyz">
+                                                <rect key="frame" x="0.0" y="0.0" width="29.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7T6-ak-aSW">
+                                                <rect key="frame" x="0.0" y="40.5" width="342" height="31"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1y-Nz-Mbz">
+                                                        <rect key="frame" x="0.0" y="0.0" width="36.5" height="31"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="일">
+                                                            <backgroundConfiguration key="background" cornerRadius="10">
+                                                                <color key="strokeColor" systemColor="labelColor"/>
+                                                            </backgroundConfiguration>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="tapDateButton:" destination="1Ax-uu-K0y" eventType="touchUpInside" id="6pi-Tp-oct"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrP-jY-vYr">
+                                                        <rect key="frame" x="51" y="0.0" width="36.5" height="31"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="월">
+                                                            <backgroundConfiguration key="background" cornerRadius="10">
+                                                                <color key="strokeColor" systemColor="labelColor"/>
+                                                            </backgroundConfiguration>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="tapDateButton:" destination="1Ax-uu-K0y" eventType="touchUpInside" id="MxF-AG-C3F"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dqJ-Py-Owv">
+                                                        <rect key="frame" x="102" y="0.0" width="36.5" height="31"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="화">
+                                                            <backgroundConfiguration key="background" cornerRadius="10">
+                                                                <color key="strokeColor" systemColor="labelColor"/>
+                                                            </backgroundConfiguration>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="tapDateButton:" destination="1Ax-uu-K0y" eventType="touchUpInside" id="mq9-Ts-Thh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zth-1Z-8HZ">
+                                                        <rect key="frame" x="153" y="0.0" width="36.5" height="31"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="수">
+                                                            <backgroundConfiguration key="background" cornerRadius="10">
+                                                                <color key="strokeColor" systemColor="labelColor"/>
+                                                            </backgroundConfiguration>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="tapDateButton:" destination="1Ax-uu-K0y" eventType="touchUpInside" id="fsP-5g-C66"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVW-8Q-nBb">
+                                                        <rect key="frame" x="203.5" y="0.0" width="36.5" height="31"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="목">
+                                                            <backgroundConfiguration key="background" cornerRadius="10">
+                                                                <color key="strokeColor" systemColor="labelColor"/>
+                                                            </backgroundConfiguration>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="tapDateButton:" destination="1Ax-uu-K0y" eventType="touchUpInside" id="MxG-EL-W2g"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bba-Pj-lnG">
+                                                        <rect key="frame" x="254.5" y="0.0" width="36.5" height="31"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="금">
+                                                            <backgroundConfiguration key="background" cornerRadius="10">
+                                                                <color key="strokeColor" systemColor="labelColor"/>
+                                                            </backgroundConfiguration>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="tapDateButton:" destination="1Ax-uu-K0y" eventType="touchUpInside" id="bc8-5n-I40"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rKy-Ow-4GS">
+                                                        <rect key="frame" x="305.5" y="0.0" width="36.5" height="31"/>
+                                                        <color key="tintColor" systemColor="labelColor"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="토">
+                                                            <backgroundConfiguration key="background" cornerRadius="10">
+                                                                <color key="strokeColor" systemColor="labelColor"/>
+                                                            </backgroundConfiguration>
+                                                        </buttonConfiguration>
+                                                        <connections>
+                                                            <action selector="tapDateButton:" destination="1Ax-uu-K0y" eventType="touchUpInside" id="7GZ-AK-3mm"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="7T6-ak-aSW" secondAttribute="trailing" id="HWs-yI-bmL"/>
+                                            <constraint firstItem="7T6-ak-aSW" firstAttribute="leading" secondItem="V5O-Bd-iys" secondAttribute="leading" id="QY2-0q-zxU"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="et1-B9-NOA" firstAttribute="leading" secondItem="pIW-dI-MkB" secondAttribute="leading" id="58C-5H-A3D"/>
+                                    <constraint firstItem="iU1-kh-LDx" firstAttribute="top" secondItem="pIW-dI-MkB" secondAttribute="top" id="KeL-Tx-aur"/>
+                                    <constraint firstItem="V5O-Bd-iys" firstAttribute="leading" secondItem="pIW-dI-MkB" secondAttribute="leading" id="TUW-g0-S8s"/>
+                                    <constraint firstAttribute="trailing" secondItem="V5O-Bd-iys" secondAttribute="trailing" id="YnN-Ei-f0a"/>
+                                    <constraint firstAttribute="trailing" secondItem="et1-B9-NOA" secondAttribute="trailing" id="ZjB-iN-L0x"/>
+                                    <constraint firstAttribute="trailing" secondItem="iU1-kh-LDx" secondAttribute="trailing" id="hiy-Fz-QGO"/>
+                                    <constraint firstItem="iU1-kh-LDx" firstAttribute="leading" secondItem="pIW-dI-MkB" secondAttribute="leading" id="xr6-pp-XAv"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="whk-3f-je1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pIW-dI-MkB" firstAttribute="leading" secondItem="whk-3f-je1" secondAttribute="leading" constant="36" id="bsm-hI-beo"/>
+                            <constraint firstItem="pIW-dI-MkB" firstAttribute="top" secondItem="whk-3f-je1" secondAttribute="top" constant="30" id="pBh-qL-FeT"/>
+                            <constraint firstItem="whk-3f-je1" firstAttribute="trailing" secondItem="pIW-dI-MkB" secondAttribute="trailing" constant="36" id="qAJ-Hj-NXf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="알람 추가" id="MV4-RS-KcW">
+                        <barButtonItem key="rightBarButtonItem" title="등록" id="ykY-l6-XMm">
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="alarmCasePickerView" destination="Nzb-eg-0x0" id="xT3-Wn-yaA"/>
+                        <outlet property="datePicker" destination="M1b-KA-XkG" id="tCY-wF-y5V"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="10D-Vy-jMV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1308.6956521739132" y="70.982142857142847"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="XR5-Bx-FiB">
+            <objects>
+                <navigationController id="qLJ-7k-qYu" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pfm-Kb-8as">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WjO-cy-gv6" kind="relationship" relationship="rootViewController" id="SUn-n6-KQ1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hjp-mu-XkC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-401" y="71"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plus" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
